@@ -3,6 +3,33 @@
 借助于 Redux， Elm， Dva，Fish Redux 站在巨人的肩膀上，将集中，分治，复用，隔离做的更进一步。
 配置式组装。 一方面我们将一个大的页面，对视图和数据层层拆解为互相独立的 Component|Adapter，上层负责组装，下层负责实现； 另一方面将 Component|Adapter 拆分为 View，Reducer，Effect 等相互独立的上下文无关函数。
 
+#### 直接使用 flutter 会面临的问题？
+    1. 数据流问题
+        目前社区流行的数据流方案有： 单向数据流方案，以 Redux 为代表 响应式数据流方案，以 Mobx 为代表 其他，以 rxjs 为代表 那么哪一种架构最合适 flutter ？ 我们追随了 javascript 栈绝大多数开发者的选择 - ReduxJs 感谢 ReduxJs，我们是几乎 100%的还原了它在 dart 上的实现。所以我们也继承了它的优点：[Predictable],[Centralized],[Debuggable],[Flexible]。
+    2. 页面间通信问题
+        直接使用 flutter，在 Widgets 之间传递状态和回调，随着应用复杂度的上升，会变成是一件可怕而糟糕的事情。 通过 fish redux，依托于集中的 Redux 和分治的 Effect 模块，通过一个极简的 dispatch-api，完成所有的通信的诉求。
+    3. 可插拔的组件系统
+        fish redux 通过一个配置式的 Dependencies，来完成灵活的可插拔的组件系统。同时有这一配置的存在，它解放了我们手动拼装 Reducer 的繁琐工作。 
+    4. 展示和逻辑解耦
+       fish redux 从 elm 中得到了非常多的设计灵感。 将一个组件，拆分为相互独立的 View，Effect，Reducer 三个函数，我们优雅的解决了展示和逻辑解耦的问题。 通过这样的拆分，我们将 UI 的表达隔离于一个函数内，它让我们更好的面向未来，一份 UI 表达它可能来自于开发者，可能来自于深度学习框架的 UI 代码生成，可能是面向移动终端，也可能是面向浏览器。它让我们有了更多的组合的可能。 同时函数式的编程模型带来了更容易编写，更容易扩展，更容易测试，更容易维护等特性。
+    5. 统一的编程模型和规范
+       sample_page
+        -- action.dart /// define action types and action creator
+        -- page.dart /// config a page or component
+        -- view.dart /// define a function which expresses the presentation of user interface
+        -- effect.dart /// define a function which handles the side-effect
+        -- reducer.dart /// define a function which handles state-change
+        -- state.dart /// define a state and some connector of substate
+        components
+            sample_component
+            -- action.dart
+            -- component.dart
+            -- view.dart
+            -- effect.dart
+            -- reducer.dart
+            -- state.dart
+
+
 
 ### fish-redux 演进
 
