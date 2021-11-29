@@ -1,6 +1,8 @@
 # Summary
 
-* [github](https://github.com/yangzhiquan/yangzhiquan.github.io) 
+## About
+
+
 ## iOS
 * [Objective-C的闭包与泛型](./iOS/ClosureAndGeneric.md)
 
