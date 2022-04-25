@@ -4,6 +4,7 @@
 
 
 ## iOS
+* [iOS应用的编译与运行](./iOS/boot.md)
 * [Objective-C的闭包与泛型](./iOS/ClosureAndGeneric.md)
 
 
@@ -15,6 +16,7 @@
 * 单元测试-->
 * [Flutter基础：异步编程](./Flutter/isolate.md)
 * [Flutter与iOS的事件分发](./Flutter/gesture.md)
+* [Flutter动态化](./Flutter/dynamic.md)
 * [配置化管理Api接口代码](./Flutter/jrs.md)
 
 
