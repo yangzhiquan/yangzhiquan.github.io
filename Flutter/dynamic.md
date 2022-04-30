@@ -30,6 +30,12 @@ Flutter框架的开发语言是Dart，实现动态化需要关注的是Dart语�
 
 ### 动态法方案
 
+Flutter框架的三颗树
+
+    WidgetTree:Widget 里面存储了一个视图的配置信息，可以高效的创建（build）和销毁
+    Element 是分离 WidgetTree 和真正的渲染对象的中间层， WidgetTree 用来描述对应的Element 属性
+    RenderObject 来执行 Diff， Hit Test 布局、绘制
+
 ##### 1.自定义模板代码
 
 借鉴RN的思路，选一门可以在客户端执行的解析行语言，自定义一套模板跟目标语言的UI组件一一对应。比如采用js语言，再用json格式来定义模板语言。
