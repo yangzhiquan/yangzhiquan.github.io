@@ -1,5 +1,6 @@
-# Flutter与动态化
 
+[TOC]
+# Flutter与动态化
 
 ### 前言
 
@@ -70,7 +71,9 @@ Flutter框架的开发语言是Dart，实现动态化需要关注的是Dart语�
 
 ##### 4. 基于Dill文件
 
-UC的[Aion](https://mp.weixin.qq.com/s/mPkx9b07xCkokxxbGc7grA)
+由于Analyzer解析Dart代码得到AST中信息不够完备，导致很多正常的Flutter代码写法无法顺利解释执行。尤其是如果项目要依赖一些Flutter社区提供的有比较复杂写法的一些第三方库，更是举步维艰。为了解决这一问题，将动态化产物调整为使用Kernel Binary。
+
+UC的[Aion](https://mp.weixin.qq.com/s/mPkx9b07xCkokxxbGc7grA) 、手Q的 DNFlutter.
 
 需要动态化的代码编译为Dill文件后，通过在AOT模式下增加对KBC 解释器的支持，实现KBC与AOT在混合模式下运行。，直接用DartVM将这部分解释执行；
 
@@ -93,3 +96,43 @@ IL二进制格式的读写：将IL输出为二进制格式，提升读取效率
 指令集：作为IL的内存数据表示
 栈帧式虚拟机：执行指令，对栈元素进行精准控制
 代理生成器：自动生成Flutter&Dart核心库的代理实现
+
+##### 6. 基于so文件
+
+Android端的产物是so文件，是可以直接替换的。方案仅限于安卓系统。
+
+##### 推荐方案 阿里的Kraken(微信的liteapp) 与 手Q的 DNFlutter
+
+    Kraken实现了一套兼容W3C规范的DOM API，上层业务逻辑最终通过统一的DOM API，经过Bridge层完成js-dart的通信，上层的指令传递到Flutter端，实现对Flutter端的调用。在Flutter端直接使用Render Object进行绘制后直接挂载到RenderView上进行渲染。
+    在跨端通信上，采用基于dart:ffi的方案解决效率问题。
+
+    手Q的 DNFlutter 基于Kernel Binary，自己实现解释器（Flutter代码的中间编译产物dill文件的数据格式，dill文件中其实也包含一个AST，叫做Kernel AST，并且系统提供了一个名为Kernel的库，支持对Kernel AST中节点的访问，并且支持懒加载）。
+    Kernel AST最大的优势是其经过了编译过程中的类型推断（TFA），因此节点中包含精确的数据类型信息。dill文件中也包含类的继承、混入经编译处理后的完整信息，在信息上基本是完备的。这就为支持完整的Flutter代码的写法提供了基础和前提。本方案实现的解释器在解释能力上有了很大的加强，比较复杂的继承和混入写法的解释也可以支持。通过扫描Kernel AST，可以对动态化代码依赖的符号进行精确的定位，再借助自动化脚本，就能对项目以来的镜像代码进行生成，并保证符号的完备性。
+
+    在性能上，由于Kernel Binary是一种二进制格式，在格式上更为紧凑，加载和访问的速度相比json格式也有很大的提高。由于支持懒加载，AST加载及访问的耗时不再随代码量的增加而线性上升，因此可以支持更复杂的业务进行动态化。
+
+
+# 传统动态化
+ 
+ 分为基于Webview的动态化比如H5或者小程序，跟基于Native渲染的方案。
+
+##### 1. 基于Webview
+ ![web_proc](./asset/webview_render.jpg)
+
+对于一、二阶段的耗时可以做一些优化；
+
+    H5: 常见的比如12306，通过Webview预热、并发网络请求、离线包等方案进行性能优化；
+    小程序：代码及资源预下载、UI渲染与业务逻辑各自一个独立线程等性能优化措施；
+
+但第三阶段的渲染耗时跟事件响应的优化则难以进行。
+
+Webview的渲染流程Html->DomTree ->RenderTree->RenderLayer+栅格化->合成->GPU渲染。
+相比比Native的View->Layout->RenderNode->合成->GPU渲染要多出好几步，并且渲染管线不支持批量处理，因此在性能上优化空间有限，遇到UI频繁更新的场景，性能下降尤为明显。（批量渲染是通过减少CPU向GPU发送渲染命令的次数，以及减少GPU切换渲染状态的次数）
+
+
+##### 2. 基于Native
+
+ 为了上诉第三阶段解决渲染问题，`ReactNative`这类框架改用JSCore或V8引擎解释执行代码，并构建Virtual DOM Tree来合并界面变动，最终映射为Native组件进行渲染。
+
+ 这样解决了渲染的效率问题，但是由于依赖平台UI，灵活性受到限制；而且也存在加载、跨端通讯、编解码、等耗时问题。
+
