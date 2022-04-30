@@ -18,7 +18,6 @@ Core JIT：Dart的一种二进制模式，将指令代码和 heap数据打包成
 AOT Assembly: 即 Dart的 AOT模式。直接生成汇编源代码文件，由各平台自行汇编。
 
 
-[Introduction to Dart VM](https://mrale.ph/dartvm/)
 
 Flutter的核心还是跨平台而不是动态化，但这两者都是目前业界的诉求，因此才会有那么多的动态化方案产生。
 Flutter框架的开发语言是Dart，实现动态化需要关注的是Dart语言的编译、运行过程.
@@ -27,6 +26,39 @@ Flutter框架的开发语言是Dart，实现动态化需要关注的是Dart语�
 - `dill`、`bin`: AST对象序列化存到磁盘的文件类型; eg:app.dill，或者Debug阶段的产物(kernel_blob.bin) 
 - `Dart Kernel`: AST文件的数据格式，能够被Dart VM解释执行；也是dart2js或其他转换的中间语言.
 - `IL`: Intermediate Language, 要生成AOT产物，编译器会加载dill文件，编译成类似字节码的中间语言。
+
+### DartVM
+
+[Introduction to Dart VM](https://mrale.ph/dartvm/)
+
+Dart VM 是一个执行 Dart 语言的组件集合: 
+    1. 运行系统（对象模型、垃圾收集、快照）
+    2. native代码核心库
+    3. 开发体验优化组件（debug调试、性能分析、热重装）
+    4. JIT、AOT编译管道
+    5. 解释器
+    6. 指令模拟器
+    7. ...
+
+Dart VM怎么执行Dart代码
+
+    1. 从源码执行或者通过 JIT 执行内核二进制文件(Kernel binary)
+    2. 从快照中恢复。（AOT快照或者AppJIT快照）
+    3. 在VM上执行的 Dart 代码，都依赖 isolate（控制线程跟独占的堆内存等资源组合）
+    4. 单线程模型，是指同一时刻，一个线程只能进入一个isolate。相同的系统线程可以首先进入一个 isolate，执行 Dart 代码，然后退出这个 isolate 在进入另外一个 isolate。
+   
+isolate 除了会关联一个突变线程，同时也会被关联到许多辅助线程，比如：
+
+    一个后台的 JIT 编译线程；
+    多个垃圾清理线程；
+    多个并发的垃圾标记线程。
+
+
+自从 Dart 2 版本之后，VM 已经没有了直接从源代码执行 Dart 的功能，取而代之的是，VM 只能执行那些由内核抽象语法树（Kernel ASTs）序列化成的内核二进制文件（Kernel binaries）（又被称作 dill files）。而将 Dart 源码翻译成内核抽象语法树的任务则交给了由 Dart 编写的通用前端`common front-end` (CFE）,这个工具被不同的 Dart 模块所使用（举个例子：虚拟机（VM），dart2js，Dart Dev Compiler）。
+
+为了保留直接从独立源码直接执行 Dart 的便利性，专门还提供了一个辅助 isolate ，叫做 kernel service ，专门用来处理 Dart 源码编译成内核可执行文件的过程。之后 VM 就能直接执行生成的内核二进制文件了。
+
+
 
 ### 动态法方案
 
