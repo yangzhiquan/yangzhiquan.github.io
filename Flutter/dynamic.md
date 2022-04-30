@@ -106,10 +106,23 @@ Android端的产物是so文件，是可以直接替换的。方案仅限于安�
     Kraken实现了一套兼容W3C规范的DOM API，上层业务逻辑最终通过统一的DOM API，经过Bridge层完成js-dart的通信，上层的指令传递到Flutter端，实现对Flutter端的调用。在Flutter端直接使用Render Object进行绘制后直接挂载到RenderView上进行渲染。
     在跨端通信上，采用基于dart:ffi的方案解决效率问题。
 
+整个架构设计依然是类 RN 方案，只是 Native 渲染层从系统平台侧切换成了 Flutter Engine 自绘，以解决跨端渲染不一致的问题，Flutter 自身的问题依然存在（如内存占用过大、包增量、图片内存问题等）。同时通过 Flutter Engine 提供的 FFI 通信接口进行 JSCore 与 Flutter 之间的通信，缓解了类 RN 方案中 JSBridge 通信效率低导致的排队性能瓶颈。
+
+
+---
     手Q的 DNFlutter 基于Kernel Binary，自己实现解释器（Flutter代码的中间编译产物dill文件的数据格式，dill文件中其实也包含一个AST，叫做Kernel AST，并且系统提供了一个名为Kernel的库，支持对Kernel AST中节点的访问，并且支持懒加载）。
     Kernel AST最大的优势是其经过了编译过程中的类型推断（TFA），因此节点中包含精确的数据类型信息。dill文件中也包含类的继承、混入经编译处理后的完整信息，在信息上基本是完备的。这就为支持完整的Flutter代码的写法提供了基础和前提。本方案实现的解释器在解释能力上有了很大的加强，比较复杂的继承和混入写法的解释也可以支持。通过扫描Kernel AST，可以对动态化代码依赖的符号进行精确的定位，再借助自动化脚本，就能对项目以来的镜像代码进行生成，并保证符号的完备性。
 
     在性能上，由于Kernel Binary是一种二进制格式，在格式上更为紧凑，加载和访问的速度相比json格式也有很大的提高。由于支持懒加载，AST加载及访问的耗时不再随代码量的增加而线性上升，因此可以支持更复杂的业务进行动态化。
+
+DNFlutter整体流程
+
+    将 Dart 业务源码通过 DNFlutter 的 flutter_ast_gen.sh 脚本生成 dill，app.dill 包括系统 library, 再通过裁剪生成 ast.zip，目的是为了仅保留业务代码部分，以减少下发的包大小
+    接着通过 run_buildin_builder.sh 生成业务代码的系统依赖符号，实现解释器对原生类的转调，检查是否会有未内置的 buildin。注意，目前 buildin 只能内置在宿主工程，随宿主工程一起编译，业务代码变只能依赖已有的 buildin，因为 AOT 编译后，不被引用的符号会被裁减了，所以得加个 build_in 保证符号被引用，这样 AST 运行时才有这些符号。
+    宿主工程在 AOT 侧通过 DNFlutter 提供的 AST Runtiime 解释执行 AST。在 buildin 不变情况下，通过在线下发 AST 资源实现动态化。
+
+-----
+结尾：动态化都避免不了一个问题：错误定位都比较困难；语法支持不完善；Flutter版本更新后难以跟上。
 
 
 # 传统动态化
