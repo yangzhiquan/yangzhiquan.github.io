@@ -1,0 +1,537 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Flutter是怎么渲染UI的(todo) · title</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bibtex-indexed-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="gesture.html" />
+    
+    
+    <link rel="prev" href="isolate.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"yangzhiquan","repo":"yangzhiquan.github.io","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">iOS</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../iOS/boot.html">
+            
+                <a href="../iOS/boot.html">
+            
+                    
+                    iOS应用的编译与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../iOS/ClosureAndGeneric.html">
+            
+                <a href="../iOS/ClosureAndGeneric.html">
+            
+                    
+                    Objective-C的闭包与泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Flutter</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    Flutter的利与弊(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="isolate.html">
+            
+                <a href="isolate.html">
+            
+                    
+                    Flutter基础：异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3" data-path="render.html">
+            
+                <a href="render.html">
+            
+                    
+                    Flutter是怎么渲染UI的(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="gesture.html">
+            
+                <a href="gesture.html">
+            
+                    
+                    Flutter与iOS的事件分发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="dynamic.html">
+            
+                <a href="dynamic.html">
+            
+                    
+                    Flutter动态化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="jrs.html">
+            
+                <a href="jrs.html">
+            
+                    
+                    配置化管理Api接口代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="startUp.html">
+            
+                <a href="startUp.html">
+            
+                    
+                    0到1准备一个Flutter App(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工程素养</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../CleanCoder/iOS-Unit-Testing.html">
+            
+                <a href="../CleanCoder/iOS-Unit-Testing.html">
+            
+                    
+                    iOS单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../CleanCoder/Flutter-Unit-Testing.html">
+            
+                <a href="../CleanCoder/Flutter-Unit-Testing.html">
+            
+                    
+                    Flutter单元测试(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../CleanCoder/performance_iOS.html">
+            
+                <a href="../CleanCoder/performance_iOS.html">
+            
+                    
+                    iOS性能度量(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../CleanCoder/performance_flutter.html">
+            
+                <a href="../CleanCoder/performance_flutter.html">
+            
+                    
+                    Flutter性能度量(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">方案与设计</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../Design/feed.html">
+            
+                <a href="../Design/feed.html">
+            
+                    
+                    视频feed流设计(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../Design/task.html">
+            
+                <a href="../Design/task.html">
+            
+                    
+                    上传下载任务列表设计(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Flutter是怎么渲染UI的(todo)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h4 id="native&#x4FA7;&#x7684;&#x8F7D;&#x4F53;flutterviewcontroller"><a name="native&#x4FA7;&#x7684;&#x8F7D;&#x4F53;flutterviewcontroller" class="anchor-navigation-ex-anchor" href="#native&#x4FA7;&#x7684;&#x8F7D;&#x4F53;flutterviewcontroller"><i class="fa fa-link" aria-hidden="true"></i></a>Native&#x4FA7;&#x7684;&#x8F7D;&#x4F53;<code>FlutterViewController</code>:</h4>
+<ul>
+<li><code>layerClass</code>: CALayer(&#x6A21;&#x62DF;&#x5668;)&#xFF1B;CAMetalLayer(&#x652F;&#x6301;METAL)&#xFF1B;CAEAGLLayer(&#x9ED8;&#x8BA4;)</li>
+<li>&#x754C;&#x9762;&#x7ED8;&#x5236;: takeScreenshot&#x51FD;&#x6570;&#x83B7;&#x53D6;Flutter&#x5F53;&#x524D;&#x754C;&#x9762;&#x7684;&#x5149;&#x6805;&#x56FE;</li>
+<li><code>TaskRunner</code>: platform(&#x4E0E;native&#x901A;&#x8BAF;,native&#x4E3B;&#x7EBF;&#x7A0B;), ui(dart&#x4EE3;&#x7801;), gpu, io; </li>
+<li>&#x65E0;&#x969C;&#x788D;&#x652F;&#x6301;: ensureSemanticsEnabled</li>
+<li><code>native</code>&#x65B9;&#x6CD5;&#x7ED1;&#x5B9A;: <code>RegisterNatives</code>&#x65B9;&#x6CD5;&#x7ED1;&#x5B9A;&#x7684;&#x51E0;&#x4E2A;&#x51FD;&#x6570;&#x5F0F;&#x4E24;&#x7AEF;&#x901A;&#x8BAF;&#x57FA;&#x7840;(Window_defaultRouteName&#x3001;Window_scheduleFrame&#x3001;Window_sendPlatformMessage&#x3001;Window_respondToPlatformMessage&#x3001;Window_render&#x3001;Window_updateSemantics&#x3001;Window_setIsolateDebugName...)</li>
+<li><code>&#x624B;&#x52BF;&#x5904;&#x7406;</code>: native&#x4F1A;&#x628A;event&#x900F;&#x4F20;&#x5230;flutter&#x53BB;&#x6D3E;&#x53D1;
+...</li>
+</ul>
+<h4 id="flutter&#x7684;ui&#x7ED8;&#x5236;&#x6D41;&#x7A0B;"><a name="flutter&#x7684;ui&#x7ED8;&#x5236;&#x6D41;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#flutter&#x7684;ui&#x7ED8;&#x5236;&#x6D41;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>Flutter&#x7684;UI&#x7ED8;&#x5236;&#x6D41;&#x7A0B;</h4>
+<p><img src="asset/pipeline.webp" alt="event">
+&#x7528;&#x6237;&#x8F93;&#x5165;&#x4FE1;&#x53F7;(&#x6ED1;&#x52A8;&#x3001;&#x70B9;&#x51FB;) &gt; &#x9A71;&#x52A8;&#x89C6;&#x56FE;&#x66F4;&#x65B0; &gt; &#x89E6;&#x53D1;&#x52A8;&#x753B;&#x8FDB;&#x5EA6; &gt; build&#x62BD;&#x8C61;&#x89C6;&#x56FE;&#x6570;&#x636E; &gt; &#x5E03;&#x5C40;&#x3001;&#x7ED8;&#x5236;&#x3001;&#x5408;&#x6210;&#xFF08;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;&#x7684;&#x4E09;&#x4E2A;&#x6B65;&#x9AA4;&#xFF09;&#xFF0C;&gt; &#x5149;&#x6805;&#x5316;&#x5904;&#x7406;&#x6210;&#x50CF;&#x7D20;&#x586B;&#x5145;&#x6570;&#x636E;</p>
+<h5 id="&#x89C6;&#x56FE;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;"><a name="&#x89C6;&#x56FE;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x89C6;&#x56FE;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x89C6;&#x56FE;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;</h5>
+<p>Flutter&#x7684;&#x89C6;&#x56FE;&#x6570;&#x636E;&#x62BD;&#x8C61;&#x5206;&#x4E3A;3&#x90E8;&#x5206;&#xFF0C;&#x5206;&#x522B;&#x662F;Widget&#x3001;Element&#x3001;RenderObject</p>
+<ul>
+<li><code>Widget</code>: &#x5E03;&#x5C40;&#x3001;&#x6837;&#x5F0F;&#x7B49;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</li>
+<li></li>
+</ul>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="https://github.com/yangzhiquan" target="_blank">yvan</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> last update&#xFF1A; 2022-09-22 02:14:20 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="isolate.html" class="navigation navigation-prev " aria-label="Previous page: Flutter基础：异步编程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="gesture.html" class="navigation navigation-next " aria-label="Next page: Flutter与iOS的事件分发">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Flutter是怎么渲染UI的(todo)","level":"3.3","depth":1,"next":{"title":"Flutter与iOS的事件分发","level":"3.4","depth":1,"path":"Flutter/gesture.md","ref":"./Flutter/gesture.md","articles":[]},"previous":{"title":"Flutter基础：异步编程","level":"3.2","depth":1,"path":"Flutter/isolate.md","ref":"./Flutter/isolate.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","disqus","github-buttons","editlink","ga","-highlight","prism","bibtex-indexed-cite","anchor-navigation-ex","page-footer-ex","splitter","copy-code-button","pageview-count","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"useIdentifier":false,"shortName":"gitbook-template"},"editlink":{"label":"Edit","multilingual":false,"base":"https://github.com/yangzhiquan/blob/master"},"page-footer-ex":{"copyright":"By [yvan](https://github.com/yangzhiquan)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"last update："},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"bibtex-indexed-cite":{"path":"/"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"yangzhiquan","repo":"yangzhiquan.github.io","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-Demo-2333"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"title","bib":[],"gitbook":"*"},"file":{"path":"Flutter/render.md","mtime":"2022-09-22T02:14:20.375Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-22T02:15:26.048Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

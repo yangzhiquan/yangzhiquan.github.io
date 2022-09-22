@@ -1,0 +1,541 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>配置化管理Api接口代码 · title</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bibtex-indexed-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="startUp.html" />
+    
+    
+    <link rel="prev" href="dynamic.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"yangzhiquan","repo":"yangzhiquan.github.io","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">iOS</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../iOS/boot.html">
+            
+                <a href="../iOS/boot.html">
+            
+                    
+                    iOS应用的编译与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../iOS/ClosureAndGeneric.html">
+            
+                <a href="../iOS/ClosureAndGeneric.html">
+            
+                    
+                    Objective-C的闭包与泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Flutter</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    Flutter的利与弊(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="isolate.html">
+            
+                <a href="isolate.html">
+            
+                    
+                    Flutter基础：异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="render.html">
+            
+                <a href="render.html">
+            
+                    
+                    Flutter是怎么渲染UI的(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="gesture.html">
+            
+                <a href="gesture.html">
+            
+                    
+                    Flutter与iOS的事件分发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="dynamic.html">
+            
+                <a href="dynamic.html">
+            
+                    
+                    Flutter动态化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.6" data-path="jrs.html">
+            
+                <a href="jrs.html">
+            
+                    
+                    配置化管理Api接口代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="startUp.html">
+            
+                <a href="startUp.html">
+            
+                    
+                    0到1准备一个Flutter App(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工程素养</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../CleanCoder/iOS-Unit-Testing.html">
+            
+                <a href="../CleanCoder/iOS-Unit-Testing.html">
+            
+                    
+                    iOS单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../CleanCoder/Flutter-Unit-Testing.html">
+            
+                <a href="../CleanCoder/Flutter-Unit-Testing.html">
+            
+                    
+                    Flutter单元测试(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../CleanCoder/performance_iOS.html">
+            
+                <a href="../CleanCoder/performance_iOS.html">
+            
+                    
+                    iOS性能度量(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../CleanCoder/performance_flutter.html">
+            
+                <a href="../CleanCoder/performance_flutter.html">
+            
+                    
+                    Flutter性能度量(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">方案与设计</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../Design/feed.html">
+            
+                <a href="../Design/feed.html">
+            
+                    
+                    视频feed流设计(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../Design/task.html">
+            
+                <a href="../Design/task.html">
+            
+                    
+                    上传下载任务列表设计(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >配置化管理Api接口代码</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x914D;&#x7F6E;&#x5316;&#x7BA1;&#x7406;api&#x63A5;&#x53E3;&#x4EE3;&#x7801;"><b></b>&#x914D;&#x7F6E;&#x5316;&#x7BA1;&#x7406;Api&#x63A5;&#x53E3;&#x4EE3;&#x7801;</a></li><ul><ul><li><span class="title-icon "></span><a href="#json--model"><b></b>Json &amp; Model</a></li><li><span class="title-icon "></span><a href="#&#x8BF7;&#x6C42;&#x63A5;&#x53E3;"><b></b>&#x8BF7;&#x6C42;&#x63A5;&#x53E3;</a></li><li><span class="title-icon "></span><a href="#&#x8BF7;&#x6C42;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><b></b>&#x8BF7;&#x6C42;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#xFF1A;"><b></b>&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#xFF1A;</a></li></ul></ul></ul></div><a href="#&#x914D;&#x7F6E;&#x5316;&#x7BA1;&#x7406;api&#x63A5;&#x53E3;&#x4EE3;&#x7801;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x914D;&#x7F6E;&#x5316;&#x7BA1;&#x7406;api&#x63A5;&#x53E3;&#x4EE3;&#x7801;"><a name="&#x914D;&#x7F6E;&#x5316;&#x7BA1;&#x7406;api&#x63A5;&#x53E3;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;&#x5316;&#x7BA1;&#x7406;api&#x63A5;&#x53E3;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x5316;&#x7BA1;&#x7406;Api&#x63A5;&#x53E3;&#x4EE3;&#x7801;</h1>
+<pre class="language-"><code>&#x5728;app&#x4E2D;&#xFF0C;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x8DDF;&#x7F51;&#x7EDC;&#x5E93;&#x4E4B;&#x95F4;&#x901A;&#x5E38;&#x4F1A;&#x6709;&#x8BF7;&#x6C42;&#x63A5;&#x53E3;&#x8FD9;&#x4E48;&#x4E00;&#x5C42;&#x3002;&#x968F;&#x7740;&#x7248;&#x672C;&#x8FED;&#x4EE3;&#xFF0C;&#x63A5;&#x53E3;&#x6570;&#x91CF;&#x589E;&#x52A0;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x8BF7;&#x6C42;&#x51FD;&#x6570;&#x4E5F;&#x4F1A;&#x589E;&#x52A0;&#x3002;&#x5B9E;&#x73B0;&#x914D;&#x7F6E;&#x5316;&#x7BA1;&#x7406;&#xFF0C;&#x7528;&#x811A;&#x672C;&#x751F;&#x6210;&#x8FD9;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#xFF0C;&#x80FD;&#x591F;&#x8282;&#x7701;&#x7F16;&#x5199;&#x8BF7;&#x6C42;&#x4EE3;&#x7801;&#x8DDF;&#x6570;&#x636E;&#x6A21;&#x578B;&#x7C7B;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x80FD;&#x907F;&#x514D;&#x8BF7;&#x6C42;&#x51FD;&#x6570;&#x3001;&#x6A21;&#x578B;&#x7C7B;&#x91CC;&#x8026;&#x5408;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x5C42;&#x7684;&#x7EAF;&#x51C0;&#x3002;
+</code></pre><p><img src="asset/trs.png" alt="shilitu"></p>
+<h3 id="json--model"><a name="json--model" class="anchor-navigation-ex-anchor" href="#json--model"><i class="fa fa-link" aria-hidden="true"></i></a>Json &amp; Model</h3>
+<p>&#x6A21;&#x578B;&#x7C7B;&#x7528;&#x4E8E;&#x6620;&#x5C04;&#x63A5;&#x53E3;&#x5B57;&#x6BB5;&#xFF0C;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#x53EA;&#x5305;&#x542B;&#x63A5;&#x53E3;&#x53C2;&#x6570;&#x8DDF;&#x4E24;&#x4E2A;json&#x7684;&#x76F8;&#x4E92;&#x8F6C;&#x6362;&#x51FD;&#x6570;&#x3002;&#x6A21;&#x578B;&#x7C7B;&#x7684;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x5404;&#x79CD;&#x8BED;&#x8A00;&#x90FD;&#x6709;&#x5F88;&#x597D;&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x8D58;&#x8FF0;&#x3002;</p>
+<h3 id="&#x8BF7;&#x6C42;&#x63A5;&#x53E3;"><a name="&#x8BF7;&#x6C42;&#x63A5;&#x53E3;" class="anchor-navigation-ex-anchor" href="#&#x8BF7;&#x6C42;&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BF7;&#x6C42;&#x63A5;&#x53E3;</h3>
+<p>&#x7B80;&#x5316;&#x4E00;&#x4E0B;&#x8BF7;&#x6C42;&#x63A5;&#x53E3;&#xFF1A;&#x4F7F;&#x7528;api&#x547D;&#x540D;&#xFF0C;&#x53C2;&#x6570;&#x6620;&#x5C04;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;. &#x51FD;&#x6570;&#x5185;&#x6307;&#x5B9A;api&#x8DEF;&#x5F84;&#xFF0C;&#x8C03;&#x7528;&#x65B9;&#x53EA;&#x8D1F;&#x8D23;&#x53C2;&#x6570;&#x5373;&#x53EF;.</p>
+<pre class="language-"><code>&#x57DF;&#x540D;.&#x63A5;&#x53E3;&#x540D;((&#x53C2;&#x6570;&#x5BF9;&#x8C61;) {&#x8D4B;&#x503C;})
+</code></pre><p><img src="asset/req.png" alt="&#x51FD;&#x6570;"></p>
+<h3 id="&#x8BF7;&#x6C42;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><a name="&#x8BF7;&#x6C42;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x8BF7;&#x6C42;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BF7;&#x6C42;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<p><img src="asset/config.png" alt="config"></p>
+<pre class="language-"><code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x4E09;&#x90E8;&#x5206;
+1&#x662F;baseURL 
+2&#x662F;&#x63A5;&#x53E3;&#x5217;&#x8868;
+3&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;
+
+*&#x5176;&#x4E2D;&#x63A5;&#x53E3;&#x5217;&#x8868;&#x7684;&#x5B57;&#x6BB5;&#x5305;&#x62EC;&#xFF1A;CGI&#xFF0C;&#x53D1;&#x9001;&#x65B9;&#x6CD5;&#xFF0C;&#x53C2;&#x6570;&#xFF0C;&#x56DE;&#x5305;&#x6570;&#x636E;&#x3002;
+rspName&#x5B57;&#x6BB5;&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x56DE;&#x5305;&#x5BF9;&#x8C61;&#x7684;&#x540D;&#x79F0;&#x3002;
+models&#x5217;&#x8868;&#x7528;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x58F0;&#x660E;&#x3002;&#x58F0;&#x660E;&#x4E4B;&#x540E;&#x5728;&#x914D;&#x7F6E;&#x91CC;&#x9762;&#x901A;&#x8FC7;@&#x7B26;&#x53F7;&#x4F7F;&#x7528;.
+</code></pre><p>&#x6700;&#x7EC8;&#x751F;&#x6210;&#x7684;&#x63A5;&#x53E3;&#x7C7B;&#xFF1A;
+<img src="asset/code.png" alt="config"></p>
+<h3 id="&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#xFF1A;"><a name="&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#xFF1A;</h3>
+<p><a href="https://github.com/yangzhiquan/json_request" target="_blank">json_request</a></p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="https://github.com/yangzhiquan" target="_blank">yvan</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> last update&#xFF1A; 2022-09-22 02:14:20 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="dynamic.html" class="navigation navigation-prev " aria-label="Previous page: Flutter动态化">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="startUp.html" class="navigation navigation-next " aria-label="Next page: 0到1准备一个Flutter App(todo)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"配置化管理Api接口代码","level":"3.6","depth":1,"next":{"title":"0到1准备一个Flutter App(todo)","level":"3.7","depth":1,"path":"Flutter/startUp.md","ref":"./Flutter/startUp.md","articles":[]},"previous":{"title":"Flutter动态化","level":"3.5","depth":1,"path":"Flutter/dynamic.md","ref":"./Flutter/dynamic.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","disqus","github-buttons","editlink","ga","-highlight","prism","bibtex-indexed-cite","anchor-navigation-ex","page-footer-ex","splitter","copy-code-button","pageview-count","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"useIdentifier":false,"shortName":"gitbook-template"},"editlink":{"label":"Edit","multilingual":false,"base":"https://github.com/yangzhiquan/blob/master"},"page-footer-ex":{"copyright":"By [yvan](https://github.com/yangzhiquan)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"last update："},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"bibtex-indexed-cite":{"path":"/"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"yangzhiquan","repo":"yangzhiquan.github.io","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-Demo-2333"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"title","bib":[],"gitbook":"*"},"file":{"path":"Flutter/jrs.md","mtime":"2022-09-22T02:14:20.375Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-22T02:15:26.048Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,643 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Objective-C的闭包与泛型 · title</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bibtex-indexed-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Flutter/intro.html" />
+    
+    
+    <link rel="prev" href="boot.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"yangzhiquan","repo":"yangzhiquan.github.io","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">iOS</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="boot.html">
+            
+                <a href="boot.html">
+            
+                    
+                    iOS应用的编译与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="ClosureAndGeneric.html">
+            
+                <a href="ClosureAndGeneric.html">
+            
+                    
+                    Objective-C的闭包与泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Flutter</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Flutter/intro.html">
+            
+                <a href="../Flutter/intro.html">
+            
+                    
+                    Flutter的利与弊(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../Flutter/isolate.html">
+            
+                <a href="../Flutter/isolate.html">
+            
+                    
+                    Flutter基础：异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../Flutter/render.html">
+            
+                <a href="../Flutter/render.html">
+            
+                    
+                    Flutter是怎么渲染UI的(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../Flutter/gesture.html">
+            
+                <a href="../Flutter/gesture.html">
+            
+                    
+                    Flutter与iOS的事件分发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../Flutter/dynamic.html">
+            
+                <a href="../Flutter/dynamic.html">
+            
+                    
+                    Flutter动态化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../Flutter/jrs.html">
+            
+                <a href="../Flutter/jrs.html">
+            
+                    
+                    配置化管理Api接口代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../Flutter/startUp.html">
+            
+                <a href="../Flutter/startUp.html">
+            
+                    
+                    0到1准备一个Flutter App(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工程素养</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../CleanCoder/iOS-Unit-Testing.html">
+            
+                <a href="../CleanCoder/iOS-Unit-Testing.html">
+            
+                    
+                    iOS单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../CleanCoder/Flutter-Unit-Testing.html">
+            
+                <a href="../CleanCoder/Flutter-Unit-Testing.html">
+            
+                    
+                    Flutter单元测试(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../CleanCoder/performance_iOS.html">
+            
+                <a href="../CleanCoder/performance_iOS.html">
+            
+                    
+                    iOS性能度量(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../CleanCoder/performance_flutter.html">
+            
+                <a href="../CleanCoder/performance_flutter.html">
+            
+                    
+                    Flutter性能度量(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">方案与设计</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../Design/feed.html">
+            
+                <a href="../Design/feed.html">
+            
+                    
+                    视频feed流设计(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../Design/task.html">
+            
+                <a href="../Design/task.html">
+            
+                    
+                    上传下载任务列表设计(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Objective-C的闭包与泛型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#&#x56DE;&#x987E;objective-c&#x7684;&#x95ED;&#x5305;&#x4E0E;&#x6CDB;&#x578B;"><b></b>&#x56DE;&#x987E;Objective-C&#x7684;&#x95ED;&#x5305;&#x4E0E;&#x6CDB;&#x578B;</a></li><ul><li><span class="title-icon "></span><a href="#21-&#x4EC0;&#x4E48;&#x662F;&#x6CDB;&#x578B;&#xFF1F;"><b></b>2.1 &#x4EC0;&#x4E48;&#x662F;&#x6CDB;&#x578B;&#xFF1F;</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="&#x56DE;&#x987E;objective-c&#x7684;&#x95ED;&#x5305;&#x4E0E;&#x6CDB;&#x578B;"><a name="&#x56DE;&#x987E;objective-c&#x7684;&#x95ED;&#x5305;&#x4E0E;&#x6CDB;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x56DE;&#x987E;objective-c&#x7684;&#x95ED;&#x5305;&#x4E0E;&#x6CDB;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DE;&#x987E;Objective-C&#x7684;&#x95ED;&#x5305;&#x4E0E;&#x6CDB;&#x578B;</h2>
+<pre class="language-"><code>OC&#x4F5C;&#x4E3A;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x754C;&#x7684;80&#x540E;&#x7684;&#xFF0C;&#x4E3A;&#x4E86;&#x80FD;&#x8DDF;&#x65B0;&#x751F;&#x4EE3;&#x7684;&#x8BED;&#x8A00;&#x6709;&#x70B9;&#x5171;&#x540C;&#x70B9;&#xFF0C;&#x4E5F;&#x66FE;&#x8BA9;&#x7F16;&#x8BD1;&#x5668;&#x7ED9;&#x81EA;&#x5DF1;&#x52A0;&#x4E00;&#x4E9B;&#x65B0;&#x7279;&#x6027;&#xFF0C;&#x6BD4;&#x5982;&#x95ED;&#x5305;&#x3001;&#x4E3A;&#x7A7A;&#x6027;&#x3001;&#x6CDB;&#x578B;&#x7B49;&#x3002;
+</code></pre><h4 id="11-&#x5B9A;&#x4E49;"><a name="11-&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#11-&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1 &#x5B9A;&#x4E49;</h4>
+<p>block&#x662F;Objective-C&#x7684;&#x95ED;&#x5305;&#x5B9E;&#x73B0;&#xFF0C;&#x5B83;&#x7684;&#x58F0;&#x660E;&#x8DDF;&#x5B9A;&#x4E49;&#x4E3A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-objc">    &#x8FD4;&#x56DE;&#x7C7B;&#x578B; (^&#x540D;&#x79F0;)(&#x53C2;&#x6570;&#x7C7B;&#x578B;) = ^&#x8FD4;&#x56DE;&#x7C7B;&#x578B; (&#x53C2;&#x6570;) { &#x4EE3;&#x7801; };
+    // eg:
+    int (^numberValue)(NSNumber *) = ^int (NSNumber *num) {
+        return num.intValue;
+    };
+</code></pre>
+<p>&#x6267;&#x884C;&#x4E00;&#x4E2A;block&#x672C;&#x8D28;&#x4E0A;&#x8FD8;&#x662F;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x3002;&#x7F16;&#x8BD1;&#x5668;&#x7F16;&#x8BD1;&#x65F6;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x518D;&#x628A;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5730;&#x5740;&#xFF0C;&#x4EE5;&#x53CA;block&#x5F15;&#x7528;&#x7684;&#x5916;&#x90E8;&#x53D8;&#x91CF;&#x7528;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x4EE5;&#x53C2;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x4F20;&#x5165;&#x51FD;&#x6570;&#x3002;</p>
+<h4 id="12-&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x4E0E;&#x53D8;&#x91CF;&#x6355;&#x83B7;"><a name="12-&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x4E0E;&#x53D8;&#x91CF;&#x6355;&#x83B7;" class="anchor-navigation-ex-anchor" href="#12-&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x4E0E;&#x53D8;&#x91CF;&#x6355;&#x83B7;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2 &#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x4E0E;&#x53D8;&#x91CF;&#x6355;&#x83B7;</h4>
+<p>&#x901A;&#x8FC7;clang&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;C++&#x4EE3;&#x7801;&#xFF0C;&#x6BD4;&#x5982;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x6267;&#x884C;clang -rewrite-objc main.m&#x8F6C;&#x6362;&#x4E3A;C++&#x4E3A;&#x4E0B;&#x56FE;.</p>
+<pre class="language-"><code class="lang-objc">int blockTest() {
+    int number = 1;
+    __block int variation = 0;
+    int (^myBlock)(int) = ^(int param) {
+        ++variation;
+        return number + variation + param;
+    };
+    return myBlock(1);
+}
+</code></pre>
+<p><img src="asset/block_func.png" alt="block_func">
+&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x521B;&#x5EFA;block&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5B9E;&#x4F8B;&#x5316;&#x4E86;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53; __blockTest_block_impl_0(xxx)&#xFF0C;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x547D;&#x540D;&#x662F;&#x6240;&#x5728;&#x7684;&#x51FD;&#x6570;+block_impl+&#x51FD;&#x6570;&#x91CC;&#x9762;&#x7B2C;&#x51E0;&#x4E2A;block.
+&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6307;&#x9488;&#xFF0C;&#x4E00;&#x4E2A;desc&#x7ED3;&#x6784;&#x4F53;&#x6307;&#x9488;&#x3002;&#x8FD8;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5916;&#x90E8;&#x53D8;&#x91CF;number&#x7684;&#x503C;&#xFF0C;&#x4EE5;&#x53CA;&#x5916;&#x90E8;&#x53D8;&#x91CF;variation&#x7684;&#x6307;&#x9488;&#x3002;&#xFF08;flags&#x8FD9;&#x91CC;&#x5FFD;&#x7565;&#xFF0C;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x53EF;&#x4EE5;&#x770B;<a href="https://clang.llvm.org/docs/Block-ABI-Apple.html" target="_blank">Block-ABI&#x6587;&#x6863;</a>&#xFF09;</p>
+<pre class="language-"><code class="lang-cpp"><span class="token keyword">struct</span> <span class="token class-name">__blockTest_block_impl_0</span> <span class="token punctuation">{</span>
+  <span class="token keyword">struct</span> <span class="token class-name">__block_impl</span> impl<span class="token punctuation">;</span>
+  <span class="token keyword">struct</span> <span class="token class-name">__blockTest_block_desc_0</span><span class="token operator">*</span> Desc<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> number<span class="token punctuation">;</span>
+  __Block_byref_variation_0 <span class="token operator">*</span>variation<span class="token punctuation">;</span> <span class="token comment">// by ref</span>
+  <span class="token function">__blockTest_block_impl_0</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>fp<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">__blockTest_block_desc_0</span> <span class="token operator">*</span>desc<span class="token punctuation">,</span> <span class="token keyword">int</span> _number<span class="token punctuation">,</span> __Block_byref_variation_0 <span class="token operator">*</span>_variation<span class="token punctuation">,</span> <span class="token keyword">int</span> flags<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">number</span><span class="token punctuation">(</span>_number<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">variation</span><span class="token punctuation">(</span>_variation<span class="token operator">-&gt;</span>__forwarding<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    impl<span class="token punctuation">.</span>isa <span class="token operator">=</span> <span class="token operator">&amp;</span>_NSConcreteStackBlock<span class="token punctuation">;</span>
+    impl<span class="token punctuation">.</span>Flags <span class="token operator">=</span> flags<span class="token punctuation">;</span>
+    impl<span class="token punctuation">.</span>FuncPtr <span class="token operator">=</span> fp<span class="token punctuation">;</span>
+    Desc <span class="token operator">=</span> desc<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x51FD;&#x6570;&#x6307;&#x9488;&#x53C2;&#x6570;&#x662F;&#x4F20;&#x7ED9;impl&#x7684;FuncPtr&#x7684;&#xFF0C;&#x5176;&#x4F59;&#x7684;&#x503C;&#x7ED3;&#x6784;&#x4F53;&#x81EA;&#x5DF1;&#x6301;&#x6709;&#x7740;&#x3002;</p>
+<p>&#x4ECE;&#x540D;&#x5B57;&#x8DDF;&#x4F5C;&#x7528;&#x770B;impl&#x8FD9;&#x4E2A;__block_impl&#x7ED3;&#x6784;&#x4F53;&#x5C31;&#x662F;block&#x672C;&#x4F53;&#x4E86;&#x3002;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x4E00;&#x4E2A;&#x201C;&#x57FA;&#x7C7B;&#x201D;&#xFF0C;&#x4EE3;&#x7801;&#x5B9A;&#x4E49;&#x7684;block&#x7F16;&#x8BD1;&#x5668;&#x90FD;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;&#x201C;&#x6D3E;&#x751F;&#x7C7B;&#x201D;&#x3002;</p>
+<pre class="language-"><code class="lang-cpp"><span class="token keyword">struct</span> <span class="token class-name">__block_impl</span> <span class="token punctuation">{</span>
+  <span class="token keyword">void</span> <span class="token operator">*</span>isa<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> Flags<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> Reserved<span class="token punctuation">;</span>
+  <span class="token keyword">void</span> <span class="token operator">*</span>FuncPtr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5BF9;&#x4E8E;number&#x8DDF;variation&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7531;&#x4E8E;block&#x5185;&#x90E8;&#x4E0D;&#x9700;&#x8981;&#x5BF9;number&#x4F5C;&#x4FEE;&#x6539;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x662F;&#x503C;&#x5F15;&#x7528;&#xFF0C;&#x800C;&#x5BF9;variation&#x53D8;&#x91CF;&#x6709;&#x4F5C;&#x4FEE;&#x6539;&#xFF0C;&#x9700;&#x8981;&#x52A0;<strong>block&#x58F0;&#x660E;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x7528;</strong>Block_byref_xx&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x5305;&#x88C5;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x518D;&#x4EE5;&#x628A;&#x5B83;&#x7684;&#x5730;&#x5740;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x5165;block&#x3002;</p>
+<h4 id="13-block&#x6267;&#x884C;&#x51FD;&#x6570;"><a name="13-block&#x6267;&#x884C;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#13-block&#x6267;&#x884C;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3 block&#x6267;&#x884C;&#x51FD;&#x6570;</h4>
+<p>block&#x7684;&#x6784;&#x5EFA;&#x51FD;&#x6570;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6307;&#x9488;&#xFF0C;&#x5B83;&#x662F;&#x7F16;&#x8BD1;&#x5668;&#x62FF;block&#x5185;&#x7684;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;block&#x7ED3;&#x6784;&#x4F53;&#x6307;&#x9488;&#xFF0C;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;block&#x58F0;&#x660E;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<pre class="language-"><code class="lang-cpp"><span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">__blockTest_block_func_0</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">__blockTest_block_impl_0</span> <span class="token operator">*</span>__cself<span class="token punctuation">,</span> <span class="token keyword">int</span> param<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  __Block_byref_variation_0 <span class="token operator">*</span>variation <span class="token operator">=</span> __cself<span class="token operator">-&gt;</span>variation<span class="token punctuation">;</span> <span class="token comment">// bound by ref</span>
+  <span class="token keyword">int</span> number <span class="token operator">=</span> __cself<span class="token operator">-&gt;</span>number<span class="token punctuation">;</span> <span class="token comment">// bound by copy</span>
+  <span class="token operator">++</span><span class="token punctuation">(</span>variation<span class="token operator">-&gt;</span>__forwarding<span class="token operator">-&gt;</span>variation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> number <span class="token operator">+</span> <span class="token punctuation">(</span>variation<span class="token operator">-&gt;</span>__forwarding<span class="token operator">-&gt;</span>variation<span class="token punctuation">)</span> <span class="token operator">+</span> param<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="14-block&#x5185;&#x5B58;&#x7BA1;&#x7406;"><a name="14-block&#x5185;&#x5B58;&#x7BA1;&#x7406;" class="anchor-navigation-ex-anchor" href="#14-block&#x5185;&#x5B58;&#x7BA1;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4 block&#x5185;&#x5B58;&#x7BA1;&#x7406;</h4>
+<p>&#x524D;&#x9762;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x91CC;&#x9762;&#xFF0C;isa&#x7684;&#x503C;&#x7F16;&#x8BD1;&#x5668;&#x662F;&#x6307;&#x5B9A;&#x4E86;&amp;_NSConcreteStackBlock&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x8FD9;&#x4E2A;block&#x4F1A;&#x5728;&#x8FDB;&#x7A0B;&#x7684;&#x865A;&#x62DF;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x7684;&#x6808;&#x533A;&#x521B;&#x5EFA;&#xFF0C;&#x51FD;&#x6570;&#x6267;&#x884C;&#x7ED3;&#x675F;&#x5806;&#x6808;&#x9500;&#x6BC1;&#x7684;&#x65F6;&#x5019;&#x5B83;&#x4E5F;&#x4F1A;&#x88AB;&#x9500;&#x6BC1;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8FD9;&#x4E2A;block&#x662F;&#x5728;&#x51FD;&#x6570;&#x5916;&#x521B;&#x5EFA;&#x7684;&#x4E00;&#x4E2A;&#x5168;&#x5C40;block&#xFF0C;&#x90A3;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x6307;&#x5B9A;isa&#x4E3A;&amp;_NSConcreteGlobalBlock&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4EE3;&#x7801;&#x5BF9;block&#x6267;&#x884C;&#x4E86;copy&#x64CD;&#x4F5C;&#xFF0C;&#x90A3;&#x5B83;&#x4F1A;&#x4ECE;&#x6808;&#x533A;&#x62F7;&#x8D1D;&#x5230;&#x5806;&#x533A;&#xFF0C;isa&#x6307;&#x5411;&amp;_NSConcreteMallocBlock&#xFF0C;&#x7531;&#x7A0B;&#x5E8F;&#x81EA;&#x884C;&#x7BA1;&#x7406;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x3002;</p>
+<p><img src="asset/block_stack_heap.jpg" alt="block_stack_heap"></p>
+<p>&#x5BF9;&#x4E8E;&#x58F0;&#x660E;&#x4E86;__block&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x524D;&#x9762;&#x8BF4;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x7528;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x6765;&#x5305;&#x88C5;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x6BD4;&#x5982;</p>
+<pre class="language-"><code class="lang-cpp"><span class="token keyword">struct</span> <span class="token class-name">__Block_byref_variation_0</span> <span class="token punctuation">{</span>
+  <span class="token keyword">void</span> <span class="token operator">*</span>__isa<span class="token punctuation">;</span>
+  __Block_byref_variation_0 <span class="token operator">*</span>__forwarding<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> __flags<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> __size<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> variation<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5F53;block&#x4ECE;&#x6808;&#x590D;&#x5236;&#x5230;&#x5806;&#x65F6;&#xFF0C;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x4E5F;&#x5168;&#x90E8;&#x88AB;&#x4ECE;&#x6808;&#x590D;&#x5236;&#x5230;&#x5806;&#x4E0A;&#x3002;&#x5728;&#x6808;&#x4E0A;&#x7684;&#x65F6;&#x5019;Block_byref&#x7684;__forwarding&#x6307;&#x5411;&#x81EA;&#x5DF1;&#xFF0C;&#x5728;&#x5806;&#x4E0A;&#x65F6;&#x5219;&#x6307;&#x5411;&#x5806;&#x4E0A;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x5B9E;&#x4F8B;&#x3002;</p>
+<p><img src="asset/block_copy.png" alt="block_copy">
+block&#x6784;&#x5EFA;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;block_desc&#x91CC;&#x9762;&#x6709;block_copy&#x8DDF;block_dispose&#xFF0C;&#x4F1A;&#x8D1F;&#x8D23;&#x91CA;&#x653E;block&#x5F15;&#x7528;&#x7684;&#x5916;&#x90E8;&#x53D8;&#x91CF;&#x3002;</p>
+<h4 id="15-&#x94FE;&#x5F0F;&#x8C03;&#x7528;"><a name="15-&#x94FE;&#x5F0F;&#x8C03;&#x7528;" class="anchor-navigation-ex-anchor" href="#15-&#x94FE;&#x5F0F;&#x8C03;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5 &#x94FE;&#x5F0F;&#x8C03;&#x7528;</h4>
+<p>block&#x7684;&#x5F15;&#x5165;&#x7ED9;oc&#x5E26;&#x6765;&#x4E0D;&#x5C11;&#x4FBF;&#x5229;&#xFF0C;&#x6BD4;&#x5982;&#x53EF;&#x4EE5;&#x8BA9;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x51FD;&#x6570;&#x901A;&#x8FC7;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;block&#xFF0C;&#x7136;&#x540E;block&#x8FD4;&#x56DE;&#x5B9E;&#x4F8B;&#x672C;&#x8EAB;&#x6765;&#x8FBE;&#x5230;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<pre class="language-"><code class="lang-objc">- (Object *(^)(int num))add {
+    return ^Object *(int num) {
+        self-&gt;_result += num;
+        return self;
+    };
+}
+
+Object *maker = [Object new];
+maker.add(2).add(3);
+</code></pre>
+<hr>
+<h3 id="21-&#x4EC0;&#x4E48;&#x662F;&#x6CDB;&#x578B;&#xFF1F;"><a name="21-&#x4EC0;&#x4E48;&#x662F;&#x6CDB;&#x578B;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#21-&#x4EC0;&#x4E48;&#x662F;&#x6CDB;&#x578B;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 &#x4EC0;&#x4E48;&#x662F;&#x6CDB;&#x578B;&#xFF1F;</h3>
+<p>&#x6CDB;&#x578B;&#x662F;&#x628A;&#x6570;&#x636E;&#x7684;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x5316;&#xFF0C;&#x53EF;&#x4EE5;&#x7F16;&#x7801;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x6307;&#x5B9A;&#x5177;&#x4F53;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5EF6;&#x540E;&#x5230;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x624D;&#x8FDB;&#x884C;&#x6307;&#x5B9A;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x7B80;&#x6D01;&#x51CF;&#x5C11;&#x91CD;&#x590D;&#x5DE5;&#x4F5C;&#x5916;&#xFF0C;&#x9650;&#x5B9A;&#x4E86;&#x7C7B;&#x578B;&#x4E5F;&#x4F1A;&#x8BA9;&#x7A0B;&#x5E8F;&#x66F4;&#x52A0;&#x5065;&#x58EE;&#xFF0C;&#x63D0;&#x5347;&#x4EE3;&#x7801;&#x53EF;&#x8BFB;&#x6027;&#x548C;&#x7A33;&#x5B9A;&#x6027;&#x3002;</p>
+<pre class="language-"><code class="lang-objc">@interface App<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> : NSObject
+- (void)translate:(T)obj;
+@end
+</code></pre>
+<p> &#x6BD4;&#x5982;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;App&#x7C7B;&#xFF0C;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#x6307;&#x5B9A;&#x4E86;Button&#xFF0C;&#x90A3;&#x4E48;translate&#x7684;&#x7C7B;&#x578B;T&#x5C31;&#x662F;Button&#xFF0C;&#x4F20;&#x4E2A;Object&#x5BF9;&#x8C61;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x8B66;&#x544A;&#x3002;&#xFF08;&#x4F46;&#x4E5F;&#x4EC5;&#x4EC5;&#x662F;&#x8B66;&#x544A;&#x26A0;&#xFE0F;&#x800C;&#x5DF2;..&#xFF09;
+<img src="asset/generic_warining_a.png" alt="generic_warining"></p>
+<h4 id="22-&#x534F;&#x53D8;&#x4E0E;&#x9006;&#x53D8;"><a name="22-&#x534F;&#x53D8;&#x4E0E;&#x9006;&#x53D8;" class="anchor-navigation-ex-anchor" href="#22-&#x534F;&#x53D8;&#x4E0E;&#x9006;&#x53D8;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 &#x534F;&#x53D8;&#x4E0E;&#x9006;&#x53D8;</h4>
+<p>OC&#x7684;&#x6CDB;&#x578B;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x5141;&#x8BB8;&#x534F;&#x53D8;&#x8FD8;&#x662F;&#x9006;&#x53D8;&#x3002;</p>
+<p><strong>covariant(&#x534F;&#x53D8;):&#x7528;&#x4E8E;&#x6CDB;&#x578B;&#x6570;&#x636E;&#x5F3A;&#x8F6C;&#x7C7B;&#x578B;,&#x5B50;&#x7C7B;&#x53EF;&#x4EE5;&#x8F6C;&#x6210;&#x7236;&#x7C7B;&#xFF1B;
+</strong>contravariant(&#x9006;&#x53D8;):&#x7528;&#x4E8E;&#x6CDB;&#x578B;&#x6570;&#x636E;&#x5F3A;&#x8F6C;&#x7C7B;&#x578B;,&#x7236;&#x7C7B;&#x53EF;&#x4EE5;&#x8F6C;&#x6210;&#x5B50;&#x7C7B;&#xFF1B;</p>
+<pre class="language-"><code class="lang-objc">@interface App<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>__covariant</span> <span class="token attr-name">T</span><span class="token punctuation">&gt;</span></span> : NSObject
+@end
+</code></pre>
+<p> &#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x52A0;&#x4E0A;<strong>covariant&#x58F0;&#x660E;&#x4E4B;&#x540E;&#xFF0C;&#x8F6C;&#x7236;&#x7C7B;&#x662F;&#x6CA1;&#x6709;&#x8B66;&#x544A;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x7B2C;&#x4E8C;&#x884C;&#x7236;&#x7C7B;&#x60F3;&#x8F6C;&#x5B50;&#x7C7B;&#x5C31;&#x6765;&#x8B66;&#x544A;&#x4E86;&#x3002;&#x8BBE;&#x7F6E;</strong>contravariant&#x5C31;&#x53CD;&#x8FC7;&#x6765;&#x4E86;&#x3002;
+ <img src="asset/generic_warining.png" alt="generic_warining"></p>
+<h4 id="23-&#x5176;&#x4ED6;"><a name="23-&#x5176;&#x4ED6;" class="anchor-navigation-ex-anchor" href="#23-&#x5176;&#x4ED6;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 &#x5176;&#x4ED6;</h4>
+<ol>
+<li><p>&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x6CDB;&#x578B;&#xFF0C;&#x6BD4;&#x5982;X&#x662F;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#xFF0C;Y&#x662F;&#x8F6C;&#x6362;&#x7C7B;&#x578B;&#xFF0C;Z&#x662F;&#x7ED3;&#x679C;&#x7C7B;&#x578B;.</p>
+<pre class="language-"><code class="lang-objc">@class MyClass<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>X,</span> <span class="token attr-name">Y,</span> <span class="token attr-name">Z</span><span class="token punctuation">&gt;</span></span>;
+</code></pre>
+</li>
+<li><p>&#x9650;&#x5B9A;&#x6CDB;&#x578B;&#x7684;&#x8303;&#x56F4;</p>
+</li>
+</ol>
+<p>&#x9650;&#x5B9A;&#x4E3A;UIView&#x6216;&#x8005;&#x6D3E;&#x751F;&#x7C7B;&#x578B;</p>
+<pre class="language-"><code class="lang-objc">@interface App<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>__covariant</span> <span class="token attr-name"><span class="token namespace">T:</span></span> <span class="token attr-name">UIView</span> <span class="token attr-name">*</span><span class="token punctuation">&gt;</span></span> : NSObject
+@end
+</code></pre>
+<p>&#x9650;&#x5B9A;&#x4E3A;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;&#x534F;&#x8BAE;&#x7684;&#x7C7B;&#x578B;</p>
+<pre class="language-"><code class="lang-objc">@interface App<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>__covariant</span> <span class="token attr-name"><span class="token namespace">T:</span></span> <span class="token attr-name">id&lt;UITableViewDelegate</span><span class="token punctuation">&gt;</span></span>&gt; : NSObject
+@end
+</code></pre>
+<p>&#x6709;&#x522B;&#x4E0E;&#x524D;&#x9762;&#x7684;&#x8B66;&#x544A;&#xFF0C;&#x4E0D;&#x6309;&#x6CDB;&#x578B;&#x58F0;&#x660E;&#x7684;&#x7C7B;&#x578B;&#x6765;&#x4F20;&#x503C;&#x662F;&#x4F1A;&#x62A5;&#x9519;&#x7684;&#x3002;
+<img src="asset/generic_error.png" alt="generic_error"></p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="https://github.com/yangzhiquan" target="_blank">yvan</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> last update&#xFF1A; 2022-09-22 02:14:20 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="boot.html" class="navigation navigation-prev " aria-label="Previous page: iOS应用的编译与运行">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Flutter/intro.html" class="navigation navigation-next " aria-label="Next page: Flutter的利与弊(todo)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Objective-C的闭包与泛型","level":"2.2","depth":1,"next":{"title":"Flutter的利与弊(todo)","level":"3.1","depth":1,"path":"Flutter/intro.md","ref":"./Flutter/intro.md","articles":[]},"previous":{"title":"iOS应用的编译与运行","level":"2.1","depth":1,"path":"iOS/boot.md","ref":"./iOS/boot.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","disqus","github-buttons","editlink","ga","-highlight","prism","bibtex-indexed-cite","anchor-navigation-ex","page-footer-ex","splitter","copy-code-button","pageview-count","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"useIdentifier":false,"shortName":"gitbook-template"},"editlink":{"label":"Edit","multilingual":false,"base":"https://github.com/yangzhiquan/blob/master"},"page-footer-ex":{"copyright":"By [yvan](https://github.com/yangzhiquan)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"last update："},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"bibtex-indexed-cite":{"path":"/"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"yangzhiquan","repo":"yangzhiquan.github.io","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-Demo-2333"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"title","bib":[],"gitbook":"*"},"file":{"path":"iOS/ClosureAndGeneric.md","mtime":"2022-09-22T02:14:20.375Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-22T02:15:26.048Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

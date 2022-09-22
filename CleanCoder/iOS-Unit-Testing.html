@@ -1,0 +1,889 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>iOS单元测试 · title</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bibtex-indexed-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Flutter-Unit-Testing.html" />
+    
+    
+    <link rel="prev" href="../Flutter/startUp.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"yangzhiquan","repo":"yangzhiquan.github.io","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">iOS</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../iOS/boot.html">
+            
+                <a href="../iOS/boot.html">
+            
+                    
+                    iOS应用的编译与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../iOS/ClosureAndGeneric.html">
+            
+                <a href="../iOS/ClosureAndGeneric.html">
+            
+                    
+                    Objective-C的闭包与泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Flutter</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Flutter/intro.html">
+            
+                <a href="../Flutter/intro.html">
+            
+                    
+                    Flutter的利与弊(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../Flutter/isolate.html">
+            
+                <a href="../Flutter/isolate.html">
+            
+                    
+                    Flutter基础：异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../Flutter/render.html">
+            
+                <a href="../Flutter/render.html">
+            
+                    
+                    Flutter是怎么渲染UI的(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../Flutter/gesture.html">
+            
+                <a href="../Flutter/gesture.html">
+            
+                    
+                    Flutter与iOS的事件分发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../Flutter/dynamic.html">
+            
+                <a href="../Flutter/dynamic.html">
+            
+                    
+                    Flutter动态化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../Flutter/jrs.html">
+            
+                <a href="../Flutter/jrs.html">
+            
+                    
+                    配置化管理Api接口代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../Flutter/startUp.html">
+            
+                <a href="../Flutter/startUp.html">
+            
+                    
+                    0到1准备一个Flutter App(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工程素养</li>
+        
+        
+    
+        <li class="chapter active" data-level="4.1" data-path="iOS-Unit-Testing.html">
+            
+                <a href="iOS-Unit-Testing.html">
+            
+                    
+                    iOS单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="Flutter-Unit-Testing.html">
+            
+                <a href="Flutter-Unit-Testing.html">
+            
+                    
+                    Flutter单元测试(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="performance_iOS.html">
+            
+                <a href="performance_iOS.html">
+            
+                    
+                    iOS性能度量(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="performance_flutter.html">
+            
+                <a href="performance_flutter.html">
+            
+                    
+                    Flutter性能度量(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">方案与设计</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../Design/feed.html">
+            
+                <a href="../Design/feed.html">
+            
+                    
+                    视频feed流设计(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../Design/task.html">
+            
+                <a href="../Design/task.html">
+            
+                    
+                    上传下载任务列表设计(todo)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >iOS单元测试</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#1-&#x4EC0;&#x4E48;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><b></b>1. &#x4EC0;&#x4E48;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</a></li><ul><ul><li><span class="title-icon "></span><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1F;"><b></b>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1F;</a></li></ul></ul><li><span class="title-icon "></span><a href="#2-ios&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x4F7F;&#x7528;-xctest--ocmock"><b></b>2. iOS&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x4F7F;&#x7528; (XCTest + OCMock)</a></li><li><span class="title-icon "></span><a href="#3-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x8BBE;&#x8BA1;"><b></b>3. &#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x8BBE;&#x8BA1;</a></li><li><span class="title-icon "></span><a href="#4-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6848;&#x4F8B;&#x5206;&#x6790;"><b></b>4. &#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6848;&#x4F8B;&#x5206;&#x6790;</a></li><li><span class="title-icon "></span><a href="#5-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x81EA;&#x52A8;&#x5316;"><b></b>5. &#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x81EA;&#x52A8;&#x5316;</a></li><li><span class="title-icon "></span><a href="#6-demo"><b></b>6. demo</a></li></ul></div><a href="#1-&#x4EC0;&#x4E48;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="1-&#x4EC0;&#x4E48;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><a name="1-&#x4EC0;&#x4E48;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#1-&#x4EC0;&#x4E48;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x4EC0;&#x4E48;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</h1>
+<p>&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;. &#x901A;&#x8FC7;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x5BF9;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x6B63;&#x786E;&#x6027;&#x9A8C;&#x8BC1;&#x5C31;&#x53EB;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</p>
+<blockquote>
+<p>google&#x5BF9;&#x6D4B;&#x8BD5;&#x7684;&#x5206;&#x7C7B;&#xFF1A;</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>&#x8868;&#x5934;</th>
+<th style="text-align:center">&#x5C0F;&#x578B;&#x6D4B;&#x8BD5;</th>
+<th style="text-align:center">&#x4E2D;&#x578B;&#x6D4B;&#x8BD5;</th>
+<th style="text-align:center">&#x5927;&#x578B;&#x6D4B;&#x8BD5;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x6D4B;&#x8BD5;&#x7C7B;&#x578B;</td>
+<td style="text-align:center">&#x5355;&#x5143;&#x6D4B;&#x8BD5;</td>
+<td style="text-align:center">&#x903B;&#x8F91;&#x5C42;&#x6D4B;&#x8BD5;</td>
+<td style="text-align:center">UI&#x6D4B;&#x8BD5;/&#x63A5;&#x53E3;&#x6D4B;&#x8BD5;</td>
+</tr>
+<tr>
+<td>&#x6D4B;&#x8BD5;&#x73AF;&#x5883;</td>
+<td style="text-align:center">mock</td>
+<td style="text-align:center">mock/&#x771F;&#x5B9E;</td>
+<td style="text-align:center">&#x771F;&#x5B9E;</td>
+</tr>
+<tr>
+<td>&#x7F51;&#x7EDC;&#x8BBF;&#x95EE;</td>
+<td style="text-align:center">&#x5426;</td>
+<td style="text-align:center">localhost</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x6D4B;&#x8BD5;&#x91D1;&#x5B57;&#x5854;&#x5BF9;&#x6D4B;&#x8BD5;&#x7684;&#x5206;&#x7C7B;&#xFF1A;&#x6700;&#x5E95;&#x5C42;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF0C;&#x7136;&#x540E;&#x662F;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x6D4B;&#x8BD5;&#xFF0C;&#x6700;&#x540E;&#x662F;&#x7AEF;&#x5230;&#x7AEF;&#x7684;&#x6D4B;&#x8BD5;&#xFF08;GUI&#x6216;CLI&#xFF09;&#x3002;&#x2014;&#x300A;Succeeding With Agile&#x300B;</p>
+</blockquote>
+<p><img src="asset/test-pyramid.png" alt="avatar"></p>
+<p>&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x4F9D;&#x8D56;&#x5C11;&#xFF0C;&#x8017;&#x65F6;&#x5E95;&#xFF0C;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x6210;&#x672C;&#x4F4E;&#x3002;
+&#x5927;&#x578B;&#x96C6;&#x6210;&#x6D4B;&#x8BD5;&#x662F;&#x5728;&#x771F;&#x5B9E;&#x73AF;&#x5883;&#x6D4B;&#x8BD5;&#x7684;&#xFF0C;&#x66F4;&#x80FD;&#x4FDD;&#x8BC1;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x53EF;&#x9760;&#x6027;&#xFF0C;&#x4F46;&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x6210;&#x672C;&#x76F8;&#x5BF9;&#x6BD4;&#x8F83;&#x9AD8;&#x3002;
+&#x5C0F;&#x578B;&#x6D4B;&#x8BD5;&#x662F;&#x662F;&#x5927;&#x578B;&#x6D4B;&#x8BD5;&#x7684;&#x6839;&#x57FA;&#xFF0C;&#x5404;&#x79CD;&#x6D4B;&#x8BD5;&#x9636;&#x6BB5;&#x662F;&#x76F8;&#x8F85;&#x76F8;&#x6210;&#xFF0C;&#x800C;&#x975E;&#x4E92;&#x65A5;&#x3002;</p>
+<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1F;"><a name="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1F;</h3>
+<ul>
+<li>&#x63D0;&#x524D;&#x53D1;&#x73B0;&#x4EE3;&#x7801;&#x95EE;&#x9898;&#xFF1A;&#x8FB9;&#x754C;&#x6761;&#x4EF6;&#x96BE;&#x4EE5;&#x624B;&#x5DE5;&#x9A8C;&#x8BC1;&#xFF0C;&#x4EE3;&#x7801;&#x53EF;&#x80FD;&#x6709;&#x903B;&#x8F91;&#x9519;&#x8BEF;</li>
+<li>&#x4FDD;&#x8BC1;&#x65B9;&#x6CD5;&#x7684;&#x6B63;&#x786E;&#x6027;&#xFF1A;&#x4E3A;&#x91CD;&#x6784;&#x6253;&#x597D;&#x57FA;&#x7840;</li>
+<li>&#x4F18;&#x5316;&#x4EE3;&#x7801;&#x8BBE;&#x8BA1;</li>
+</ul>
+<h1 id="2-ios&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x4F7F;&#x7528;-xctest--ocmock"><a name="2-ios&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x4F7F;&#x7528;-xctest--ocmock" class="anchor-navigation-ex-anchor" href="#2-ios&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x4F7F;&#x7528;-xctest--ocmock"><i class="fa fa-link" aria-hidden="true"></i></a>2. iOS&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x4F7F;&#x7528; (XCTest + OCMock)</h1>
+<blockquote>
+<p>XCTest&#x76F8;&#x5173;tips</p>
+<ul>
+<li>&#x5355;&#x6D4B;&#x7C7B;&#x7EE7;&#x627F;&#x81EA;XCTestCase&#x7C7B;</li>
+<li>&#x5355;&#x6D4B;&#x65B9;&#x6CD5;&#x4EE5;test&#x5F00;&#x5934;</li>
+<li>setUp/tearDown&#x6709;&#x7C7B;&#x65B9;&#x6CD5;&#x4E0E;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</li>
+<li>&#x5355;&#x6D4B;&#x6587;&#x4EF6;&#x547D;&#x540D;&#x4E0E;&#x76EE;&#x5F55;&#x5EFA;&#x8BAE;&#x4EFF;&#x7167;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;</li>
+<li>&#x5355;&#x6D4B;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x4E0E;&#x7F16;&#x7801;&#x524D;&#x540E;&#x65E0;&#x5173;&#xFF0C;&#x6BCF;&#x4E2A;&#x5355;&#x6D4B;&#x90FD;&#x662F;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684;.</li>
+<li>Xcode&#x96C6;&#x6210;&#xFF0C;&#x7B80;&#x5355;&#x6613;&#x7528;&#xFF0C;&#x5B66;&#x4E60;&#x6210;&#x672C;&#x4F4E;</li>
+<li>&#x652F;&#x6301;&#x540C;&#x6B65;/&#x5F02;&#x6B65;&#x6D41;&#x7A0B;&#x6D4B;&#x8BD5;</li>
+<li>&#x652F;&#x6301;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF0C;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#xFF0C;UI&#x6D4B;&#x8BD5;</li>
+<li>&#x63D0;&#x4F9B;&#x4E30;&#x5BCC;&#x7684;Assert&#x65B9;&#x6CD5;</li>
+</ul>
+<p>&#x6DFB;&#x52A0;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x70B9;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x52FE;&#x9009;&#x6DFB;&#x52A0;&#x5355;&#x5143;&#x6D4B;&#x8BD5;.</li>
+<li>&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x5355;&#x5143;&#x6D4B;&#x8BD5;target&#xFF0C;&#x6DFB;&#x52A0;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6587;&#x4EF6;.</li>
+</ul>
+<p>&#x5E38;&#x89C1;&#x7684;&#x65AD;&#x8A00;</p>
+</blockquote>
+<pre class="language-"><code>- XCTFail
+- XCTAssert
+- XCTAssertTrue
+- XCTAssertEqual
+- XCTAssertEqualObjects
+- XCTAssertEqualWithAccuracy
+- XCTAssertNil
+- XCTAssertNotNil
+- XCTAssertThrows
+</code></pre><blockquote>
+<p>XCTest demo</p>
+</blockquote>
+<pre class="language-"><code class="lang-objc">// &#x88AB;&#x6D4B;&#x65B9;&#x6CD5;
++ (NSString *)descForCount:(NSInteger)count;
+// &#x5355;&#x5143;&#x6D4B;&#x8BD5;
+- (void) testDescForCount {
+    // arragne
+    NSInteger count = 0;
+    // action
+    NSString *desc = [CDataUtil descForCount:count];
+    // assert
+    XCTAssertEqualObjects(desc, @&quot;0&quot;);
+}
+</code></pre>
+<blockquote>
+<p>OCMock</p>
+<ul>
+<li>&#x652F;&#x6301;stub&#x5E76;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x884C;&#x4E3A;</li>
+<li>&#x652F;&#x6301;mock class/protocol/observer</li>
+<li>&#x652F;&#x6301;&#x53C2;&#x6570;&#x9A8C;&#x8BC1;&#x3001;&#x5EF6;&#x8FDF;&#x9A8C;&#x8BC1;</li>
+</ul>
+</blockquote>
+<pre class="language-"><code class="lang-objc">// &#x5BF9;&#x4E8E;&#x4F9D;&#x8D56;&#x7F51;&#x7EDC;&#x6216;&#x8005;&#x7B2C;&#x4E09;&#x65B9;&#x63A5;&#x53E3;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#x628A;&#x5B83;&#x66B4;&#x9732;&#x51FA;&#x6765;&#xFF0C;&#x7136;&#x540E;&#x7528;mock&#x66FF;&#x6362;&#x6389;.
+@interface CDataUtil ()
++ (NSInteger)countThreshold;
+@end
+
+
+@interface CDataUtilTest2: XCTestCase
+@property(nonatomic, strong) id mock;
+@end
+
+@implementation CDataUtilTest2
+- (void)setUp {
+    _mock = OCMClassMock([CDataUtil class]);
+    OCMStub([_mock countThreshold]).andReturn(0);
+}
+
+- (void)tearDown {
+    [_mock stopMocking];
+}
+
+- (void)testDescForCount {
+    NSInteger count = 100;
+    NSString *desc = [CDataUtil descForCount2:count];
+    XCTAssertEqualObjects(desc, @&quot;100&quot;);
+}
+@end
+</code></pre>
+<ul>
+<li>*&#x8FD9;&#x91CC;&#x4E5F;&#x53EF;&#x4EE5;&#x628A;&#x5185;&#x90E8;&#x7684;&#x4F9D;&#x8D56;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x5165;&#xFF0C;&#x8FD9;&#x6837;&#x4E5F;&#x5C31;&#x4E0D;&#x9700;&#x8981;mock&#x4E86;.</li>
+</ul>
+<h1 id="3-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x8BBE;&#x8BA1;"><a name="3-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x8BBE;&#x8BA1;" class="anchor-navigation-ex-anchor" href="#3-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x8BBE;&#x8BA1;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x8BBE;&#x8BA1;</h1>
+<ol>
+<li><p>&#x6B65;&#x9AA4;</p>
+<ul>
+<li>Arrange&#xFF1A;&#x51C6;&#x5907;&#x597D;&#x6240;&#x9700;&#x8981;&#x7684;&#x5916;&#x90E8;&#x73AF;&#x5883;&#xFF0C;&#x6570;&#x636E;&#x3001;mock&#x7B49;.</li>
+<li>Action&#xFF1A;&#x8C03;&#x7528;&#x9700;&#x8981;&#x6D4B;&#x8BD5;&#x7684;&#x65B9;&#x6CD5;&#x6216;&#x6D41;&#x7A0B;</li>
+<li>Assert&#xFF1A;&#x5224;&#x65AD;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x7B26;&#x5408;&#x9884;&#x671F;</li>
+</ul>
+</li>
+<li><p>&#x7ECF;&#x9A8C;</p>
+<ul>
+<li>&#x8FD0;&#x884C;<ul>
+<li>&#x5148;&#x8DD1;&#x8D77;&#x6765;&#x770B;&#x770B;&#x73AF;&#x5883;&#x662F;&#x5426;&#x6B63;&#x5E38;</li>
+</ul>
+</li>
+<li>&#x6B63;&#x53CD;&#x9762;&#x6D4B;&#x8BD5;<ul>
+<li>&#x5BF9;&#x4E8E;&#x6570;&#x5B57;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x6B63;&#x9762;&#x53EF;&#x4EE5;&#x662F;&#x6B63;&#x6570;&#xFF0C;&#x8D1F;&#x9762;&#x5219;&#x4E3A;&#x8D1F;&#x6570;</li>
+</ul>
+</li>
+<li>&#x7279;&#x6027;&#x6D4B;&#x8BD5;<ul>
+<li>&#x4E34;&#x754C;&#x503C;</li>
+</ul>
+</li>
+<li>&#x5B8C;&#x5584;&#x4EE3;&#x7801;&#x8986;&#x76D6;&#x7387;<ul>
+<li>&#x7F16;&#x8F91;Edit scheme, &#x52FE;&#x9009;Code Coverage&#x8DDF;target&#xFF0C;&#x6784;&#x5EFA;&#x7ED3;&#x6784;&#x5C31;&#x56DE;&#x5C55;&#x793A;&#x8BE6;&#x7EC6;&#x7684;&#x4EE3;&#x7801;&#x8986;&#x76D6;&#x7387;&#x3002;&#x4EE5;&#x53CA;&#x5728;Xcode&#x7F16;&#x8F91;&#x9875;&#x9762;&#x6709;&#x53F3;&#x4E0A;&#x89D2;&#x52FE;&#x9009;Code Coverage&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x88AB;&#x8986;&#x76D6;&#x7684;&#x7EFF;&#x8272;&#x90E8;&#x5206;&#x8DDF;&#x6CA1;&#x6709;&#x88AB;&#x8986;&#x76D6;&#x7684;&#x7EA2;&#x8272;&#x90E8;&#x5206;.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x57FA;&#x672C;&#x539F;&#x5219;</p>
+<ul>
+<li>&#x57FA;&#x4E8E;&#x610F;&#x56FE;&#x800C;&#x4E0D;&#x662F;&#x5B9E;&#x73B0;</li>
+<li>&#x7B80;&#x5355;&#x3001;&#x6E05;&#x6670;&#x3001;&#x6613;&#x61C2; (&#x5305;&#x62EC;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x51FD;&#x6570;&#x4F53;)</li>
+<li>&#x907F;&#x514D;&#x5F15;&#x5165;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#xFF0C;&#x5FAA;&#x73AF;&#x7B49;</li>
+<li>&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x5B8C;&#x5907;&#x800C;&#x4E0D;&#x91CD;&#x590D;</li>
+<li>&#x4F7F;&#x7528;Assert&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;</li>
+</ul>
+</li>
+</ol>
+<h1 id="4-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6848;&#x4F8B;&#x5206;&#x6790;"><a name="4-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6848;&#x4F8B;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#4-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6848;&#x4F8B;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6848;&#x4F8B;&#x5206;&#x6790;</h1>
+<blockquote>
+<p>UI&#x4EE3;&#x7801;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1F;: </p>
+<ul>
+<li>&#x7EAF;UI&#x4EE3;&#x7801;&#x4E0D;&#x9700;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</li>
+<li>&#x5206;&#x79BB;&#x6570;&#x636E;&#x4E0E;ui&#x4EE3;&#x7801;&#xFF0C;&#x5BF9;&#x6570;&#x636E;&#x90E8;&#x5206;&#x7F16;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</li>
+<li>&#x590D;&#x6742;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5408;&#x7406;&#x7684;&#x62C6;&#x5206;.</li>
+<li>&#x901A;&#x8FC7;&#x5355;&#x6D4B;&#x4F18;&#x5316;&#x4EE3;&#x7801;&#x67B6;&#x6784;</li>
+</ul>
+<p>&#x5F02;&#x6B65;&#x4EE3;&#x7801;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1F;:</p>
+<ul>
+<li>&#x786E;&#x5B9A;&#x662F;&#x5426;&#x9700;&#x8981;&#x9A8C;&#x8BC1;&#x5F02;&#x6B65;&#x903B;&#x8F91;</li>
+<li>&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x662F;&#x540C;&#x6B65;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x5BF9;&#x4E8E;&#x5F02;&#x6B65;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x4F7F;&#x7528;Expectation&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x5408;&#x7406;&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x5230;&#x8FBE;&#x65F6;&#x95F4;waitForExpectations&#x4F1A;&#x89E6;&#x53D1;&#x8D85;&#x65F6;&#x9519;&#x8BEF;. </li>
+</ul>
+</blockquote>
+<pre class="language-"><code class="lang-objc">// &#x6709;&#x6548;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF0C;&#x901A;&#x8FC7;XCTestExpectation&#x9A8C;&#x8BC1;&#x5F02;&#x6B65;&#x4EE3;&#x7801;
+- (void)testAsyncFetchCount2 {
+    // &#x6DFB;&#x52A0;&#x9884;&#x671F;
+    XCTestExpectation *expect = [self expectationWithDescription:@&quot;asyncFetchCount&quot;];
+
+    [CDemoUtil asyncFetchCountCompletion:^(NSInteger count) {
+        XCTAssertEqual(count, 0);
+        // &#x901A;&#x77E5;&#x6267;&#x884C;&#x5B8C;&#x6210;
+        [expect fulfill];
+    }];
+    // &#x5F00;&#x59CB;&#x7B49;&#x5F85;&#x5E76;&#x8BBE;&#x7F6E;&#x8D85;&#x65F6;&#x65F6;&#x95F4;
+    [self waitForExpectations:@[expect] timeout:1];
+}
+</code></pre>
+<blockquote>
+<p>OCMock&#x5E38;&#x7528;&#x529F;&#x80FD;</p>
+<ul>
+<li>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x662F;&#x5426;&#x6267;&#x884C;/&#x672A;&#x6267;&#x884C;&#xFF1A;&#x4F7F;&#x7528;OCMExpect/OCMReject&#x6DFB;&#x52A0;&#x9884;&#x671F;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x6700;&#x540E;&#x7528;OCMVerifyAll&#x9A8C;&#x8BC1;&#x9884;&#x671F;.</li>
+<li>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#xFF1A;&#x4F7F;&#x7528;OCMArg.checkWithBlock&#x5BF9;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;.</li>
+<li>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#xFF1A;setExpectationOrderMatter&#xFF1A;YES, &#x4E4B;&#x540E;&#x4F1A;&#x6309;&#x7167;&#x6DFB;&#x52A0;&#x9884;&#x671F;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x9A8C;&#x8BC1;&#x6267;&#x884C;&#x987A;&#x5E8F;</li>
+<li>&#x5FFD;&#x7565;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1A;OCMArg.any&#xFF08;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#xFF09;&#xFF0C;ignoringNonObjectArgs&#xFF08;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF09;</li>
+<li>&#x9A8C;&#x8BC1;&#x5F02;&#x6B65;&#x903B;&#x8F91;&#xFF1A;OCMVerifyAllWithDelay&#x8BBE;&#x7F6E;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</li>
+</ul>
+<h4 id="&#x63D0;&#x5347;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x6D4B;&#x6027;"><a name="&#x63D0;&#x5347;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x6D4B;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x63D0;&#x5347;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x6D4B;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63D0;&#x5347;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x6D4B;&#x6027;</h4>
+<ul>
+<li>&#x660E;&#x786E;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x662F;&#x5426;&#x9700;&#x8981;Mock</li>
+<li>&#x601D;&#x8003;&#x4ECE;diam&#x8BBE;&#x8BA1;&#x4E0A;&#x80FD;&#x5426;&#x907F;&#x514D;&#x4F7F;&#x7528;Mock</li>
+<li>&#x4F7F;&#x7528;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7B49;&#x65B9;&#x6CD5;&#x63D0;&#x5347;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x6D4B;&#x8BD5;&#x6027;&#xFF1A;&#x5982;&#x679C;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x5927;&#x91CF;&#x7684;mock&#x624D;&#x80FD;&#x5199;&#x597D;&#x5355;&#x6D4B;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x5757;&#x4EE3;&#x7801;&#x7684;&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#x662F;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x3002;&#x5728;&#x4F7F;&#x7528;mock&#x4E4B;&#x524D;&#x5E94;&#x8BE5;&#x76F8;&#x4FE1;&#x662F;&#x4E0D;&#x662F;&#x53EF;&#x4EE5;&#x4F18;&#x5316;&#x4EE3;&#x7801;&#x7ED3;&#x6784;&#x6765;&#x63D0;&#x5347;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x6D4B;&#x8BD5;&#x6027;&#x3002;
+&#x4EE5;&#x524D;&#x9762;&#x7684;countThreshold&#x4E3A;&#x4F8B;&#xFF1A;
+```objc
+// &#x5C06;threshold&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x5165;&#xFF0C;&#x907F;&#x514D;&#x5185;&#x90E8;&#x4EA7;&#x751F;&#x4F9D;&#x8D56;</li>
+<li>(NSString *)descForCount2:(NSInteger)count withThreshold:(NSInteger)threshold;
+```</li>
+</ul>
+<p>&#x5C0F;&#x7ED3;</p>
+<ul>
+<li>&#x903B;&#x8F91;&#x5C42;&#x4EE3;&#x7801;&#x90FD;&#x9700;&#x8981;&#x5355;&#x6D4B;</li>
+<li>&#x4FDD;&#x8BC1;&#x6CA1;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x4E0D;&#x5199;&#xFF0C;&#x4F46;&#x9664;&#x4E86;&#x6587;&#x6863;&#x4E00;&#x5B9A;&#x8981;&#x8865;&#x5145;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</li>
+<li>&#x91CD;&#x6784;&#x4E4B;&#x524D;&#x5148;&#x8865;&#x5145;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</li>
+<li>&#x53D1;&#x73B0;&#x4E0D;&#x597D;&#x5199;&#x5355;&#x6D4B;&#x7684;&#x60C5;&#x51B5;&#x53CA;&#x65F6;&#x4F18;&#x5316;diam&#x7ED3;&#x6784;</li>
+<li>&#x5408;&#x7406;&#x4F7F;&#x7528;Mock&#x8F85;&#x52A9;&#x7F16;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</li>
+</ul>
+</blockquote>
+<h1 id="5-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x81EA;&#x52A8;&#x5316;"><a name="5-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x81EA;&#x52A8;&#x5316;" class="anchor-navigation-ex-anchor" href="#5-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x81EA;&#x52A8;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x81EA;&#x52A8;&#x5316;</h1>
+<p>&#x505A;&#x597D;&#x81EA;&#x52A8;&#x5316;&#x624D;&#x80FD;&#x66F4;&#x597D;&#x7684;&#x53D1;&#x6325;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x4F18;&#x52BF;, &#x771F;&#x6B63;&#x505A;&#x5230;&#x901A;&#x8FC7;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6765;&#x4FDD;&#x8BC1;&#x4EE3;&#x7801;&#x8D28;&#x91CF;. xcodebuild&#x63D0;&#x4F9B;&#x4E86;test&#x547D;&#x4EE4;&#xFF0C;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#x4F1A;&#x751F;&#x6210;&#x7ED3;&#x679C;&#x6587;&#x4EF6;&#x4EE5;&#x53CA;&#x8986;&#x76D6;&#x7387;&#x6587;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5355;&#x6D4B;&#x7684;&#x6210;&#x529F;&#x6570;&#x3001;&#x5931;&#x8D25;&#x6570;&#x3001;&#x8986;&#x76D6;&#x7387;&#x7B49;&#x8BE6;&#x7EC6;&#x6570;&#x636E;&#x3002;
+&#x4EE5;&#x4E0B;&#x662F;&#x642D;&#x5EFA;&#x81EA;&#x52A8;&#x5316;&#x6D41;&#x7A0B;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E2A;&#x6570;&#x3001;&#x5931;&#x8D25;&#x4E2A;&#x6570;&#x3001;&#x6267;&#x884C;&#x65F6;&#x957F;&#x76D1;&#x63A7;</li>
+<li>&#x5168;&#x91CF;&#x4EE3;&#x7801;&#x8986;&#x76D6;&#x7387;&#x3001;&#x5404;&#x6A21;&#x5757;&#x4EE3;&#x7801;&#x8986;&#x76D6;&#x7387;&#x76D1;&#x63A7;</li>
+<li>MR&#x589E;&#x91CF;&#x4EE3;&#x7801;&#x8986;&#x76D6;&#x7387;&#x68C0;&#x6D4B;</li>
+<li>&#x7248;&#x672C;&#x589E;&#x91CF;&#x4EE3;&#x7801;&#x8986;&#x76D6;&#x7387;&#x68C0;&#x6D4B;</li>
+<li>&#x4E2A;&#x4EBA;&#x589E;&#x91CF;&#x4EE3;&#x7801;&#x8986;&#x76D6;&#x7387;&#x68C0;&#x6D4B;</li>
+</ul>
+<pre class="language-"><code class="lang-shell"># &#x6267;&#x884C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;
+xcodebuild test \
+-workspace Xxx.xcworkspace (or xx.project file) \
+-scheme Xxx \
+-derivedDataPath &quot;build/&quot; \
+-destination &quot;platform=XXX,OS=XX.X,name=xx&quot; \
+-resultBundlePath &quot;result/&quot; \
+-resultBundleVersion x
+
+# &#x83B7;&#x53D6;&#x8986;&#x76D6;&#x7387;&#x6587;&#x4EF6;
+xcrun xccov view --report --json path/to/xcresult
+</code></pre>
+<blockquote>
+<p>&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x81EA;&#x52A8;&#x5316;&#x76D1;&#x63A7;&#x5C0F;&#x7ED3;</p>
+<ul>
+<li>&#x7528;&#x4F8B;&#x6570;&#x5408;&#x4EE3;&#x7801;&#x8986;&#x76D6;&#x7387;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6C34;&#x5E73;&#x7684;&#x91CD;&#x8981;&#x4F53;&#x73B0;.</li>
+<li>&#x4E0D;&#x5E94;&#x76F2;&#x76EE;&#x8FFD;&#x6C42;&#x7528;&#x4F8B;&#x6570;&#x548C;&#x4EE3;&#x7801;&#x8986;&#x76D6;&#x7387;&#xFF0C;&#x5355;&#x6D4B;&#x7684;&#x76EE;&#x7684;&#x662F;&#x53D1;&#x73B0;&#x95EE;&#x9898;&#x4FDD;&#x8BC1;&#x8D28;&#x91CF;.</li>
+<li>&#x6709;&#x6570;&#x636E;&#x5EA6;&#x91CF;&#x624D;&#x80FD;&#x63A8;&#x52A8;&#x6574;&#x4F53;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6C34;&#x5E73;&#x4E0D;&#x65AD;&#x63D0;&#x5347;.</li>
+</ul>
+</blockquote>
+<h1 id="6-demo"><a name="6-demo" class="anchor-navigation-ex-anchor" href="#6-demo"><i class="fa fa-link" aria-hidden="true"></i></a>6. demo</h1>
+<pre class="language-"><code class="lang-objc">#import &lt;XCTest/XCTest.h&gt;
+#import &quot;OCMock.h&quot;
+#import &quot;UTDataUtil.h&quot;
+
+@interface UTDataUtil ()
++ (NSInteger)minThreshold;
++ (NSInteger)maxThreshold;
+
++ (void)handleLoadSuccessWithInfo:(NSDictionary *)info;
++ (void)handleLoadFailWithInfo:(NSDictionary *)info;
++ (void)showError:(BOOL)show;
+@end
+
+@interface UTDataUtilTest : XCTestCase
+@property(nonatomic, strong) id mock;
+@end
+
+@implementation UTDataUtilTest
+
+- (void)setUp {
+    _mock = OCMClassMock([UTDataUtil class]);
+    OCMStub([_mock minThreshold]).andReturn(10);
+    OCMStub([_mock maxThreshold]).andReturn(100);
+}
+
+- (void)tearDown {
+    [_mock stopMocking];
+}
+
+/// &#x5C06;&#x6570;&#x5B57;&#x8F6C;&#x5316;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x9A8C;&#x8BC1;&#x8F6C;&#x6362;&#x903B;&#x8F91;&#x662F;&#x5426;&#x6B63;&#x786E;
+/// @discussion &#x5927;&#x4E8E;&#x7B49;&#x4E8E;10&#x4E07;&#x65F6;&#xFF0C;&#x5C55;&#x793A;xx&#x4E07;&#xFF0C;&#x4E0D;&#x5E26;&#x5C0F;&#x6570;&#x70B9;
+/// @discussion &#x5927;&#x4E8E;&#x7B49;&#x4E8E;1&#x4E07;&#x65F6;&#xFF0C;&#x5C55;&#x793A;1.x&#x4E07;&#xFF0C;&#x4FDD;&#x7559;&#x4E00;&#x4F4D;&#x5C0F;&#x6570;&#x70B9;
+/// @discussion &#x4F4E;&#x4E8E;1&#x4E07;&#x65F6;&#xFF0C;&#x5C55;&#x793A;&#x5B9E;&#x9645;&#x6570;&#x5B57;
+- (void)testDescForCount {
+    {
+        NSInteger count = 100000;
+        NSString *desc = [UTDataUtil descForCount:count];
+        XCTAssertEqualObjects(desc, @&quot;10&#x4E07;&quot;);
+    }
+    {
+        NSInteger count = 10000;
+        NSString *desc = [UTDataUtil descForCount:count];
+        XCTAssertEqualObjects(desc, @&quot;1.0&#x4E07;&quot;);
+    }
+    {
+        NSInteger count = 1;
+        NSString *desc = [UTDataUtil descForCount:count];
+        XCTAssertEqualObjects(desc, @&quot;1&quot;);
+    }
+}
+
+- (void)testAsyncFetchCount {
+    XCTestExpectation *expect = [self expectationWithDescription:@&quot;asyncFetchCount&quot;];
+
+    [UTDataUtil asyncFetchCountCompletion:^(NSInteger count) {
+        XCTAssertEqual(count, 1);
+        [expect fulfill];
+    }];
+    [self waitForExpectations:@[expect] timeout:0.5];
+}
+
+/// &#x83B7;&#x53D6;&#x5904;&#x7406;&#x540E;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x9A8C;&#x8BC1;&#x6570;&#x5B57;&#x5904;&#x7406;&#x903B;&#x8F91;&#x662F;&#x5426;&#x6B63;&#x786E;
+/// @discussion &#x5927;&#x4E8E;&#x9608;&#x503C;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE; &#x539F;&#x59CB;&#x6570;&#x5B57; + &#x9608;&#x503C;
+/// @discussion &#x5C0F;&#x4E8E;&#x9608;&#x503C;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE; 0
+/// @discussion &#x5426;&#x5219;&#xFF0C;&#x8FD4;&#x56DE;&#x539F;&#x59CB;&#x6570;&#x5B57;
+- (void)testProcessedCount {
+    {
+        NSInteger origCount = 9;
+        NSInteger result = [UTDataUtil processedCount:origCount];
+        XCTAssertEqual(result, 0);
+    }
+    {
+        NSInteger origCount = 101;
+        NSInteger result = [UTDataUtil processedCount:origCount];
+        XCTAssertEqual(result, 201);
+    }
+    {
+        NSInteger origCount = 50;
+        NSInteger result = [UTDataUtil processedCount:origCount];
+        XCTAssertEqual(result, 50);
+    }
+}
+
+///// &#x4F7F;&#x7528;OCMock&#x9A8C;&#x8BC1;&#x4EE3;&#x7801;&#x662F;&#x5426;&#x6267;&#x884C;
+- (void)testHandleLoadFinished {
+    {
+        NSDictionary *info = @{@&quot;testKey&quot;: @&quot;data&quot;};
+        id mock = OCMClassMock([UTDataUtil class]);
+
+        OCMExpect([mock handleLoadSuccessWithInfo:[OCMArg any]]);
+        OCMReject([mock handleLoadFailWithInfo:[OCMArg any]]);
+
+        [UTDataUtil handleLoadFinished:info];
+
+        OCMVerifyAll(mock);
+        [mock stopMocking];
+    }
+    {
+        NSDictionary *info = @{};
+        id mock = OCMClassMock([UTDataUtil class]);
+
+        OCMExpect([mock handleLoadFailWithInfo:[OCMArg any]]);
+        OCMReject([mock handleLoadSuccessWithInfo:[OCMArg any]]);
+
+        [UTDataUtil handleLoadFinished:info];
+
+        OCMVerifyAll(mock);
+        [mock stopMocking];
+    }
+}
+@end
+</code></pre>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="https://github.com/yangzhiquan" target="_blank">yvan</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> last update&#xFF1A; 2022-09-22 02:14:20 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Flutter/startUp.html" class="navigation navigation-prev " aria-label="Previous page: 0到1准备一个Flutter App(todo)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Flutter-Unit-Testing.html" class="navigation navigation-next " aria-label="Next page: Flutter单元测试(todo)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"iOS单元测试","level":"4.1","depth":1,"next":{"title":"Flutter单元测试(todo)","level":"4.2","depth":1,"path":"CleanCoder/Flutter-Unit-Testing.md","ref":"./CleanCoder/Flutter-Unit-Testing.md","articles":[]},"previous":{"title":"0到1准备一个Flutter App(todo)","level":"3.7","depth":1,"path":"Flutter/startUp.md","ref":"./Flutter/startUp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","disqus","github-buttons","editlink","ga","-highlight","prism","bibtex-indexed-cite","anchor-navigation-ex","page-footer-ex","splitter","copy-code-button","pageview-count","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"useIdentifier":false,"shortName":"gitbook-template"},"editlink":{"label":"Edit","multilingual":false,"base":"https://github.com/yangzhiquan/blob/master"},"page-footer-ex":{"copyright":"By [yvan](https://github.com/yangzhiquan)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"last update："},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"bibtex-indexed-cite":{"path":"/"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"yangzhiquan","repo":"yangzhiquan.github.io","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-Demo-2333"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"title","bib":[],"gitbook":"*"},"file":{"path":"CleanCoder/iOS-Unit-Testing.md","mtime":"2022-09-22T02:14:20.363Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-22T02:15:26.048Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
